@@ -1,0 +1,100 @@
+body{
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+*{
+    color: #ffc103;
+}
+input {
+    color: #626236;
+}
+button{
+    color: black;
+}
+header{
+    text-align: center;
+}
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4em;
+    
+}
+.left {
+    padding: 1em;
+    border: 1px solid #15151a;
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(black, #676738)
+}
+.right {
+    padding: 2em;
+    border: 1px solid #15151a;
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(black, #676738)
+}
+.detect_button{
+    display:flex;
+    justify-content: center;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.detect_button button{
+    padding-left: 10em;
+    padding-right: 10em;
+}
+svg {
+    margin-top: .75em;
+}
+.file_button .btn-outline-warning{
+    opacity: 0;
+}
+.overlay{
+    width:180px;
+    height:35px;
+    position:absolute;
+    margin-top:210px;
+    margin-left: 60px;
+    opacity:1;
+    z-index:0;
+    text-align:center;
+    line-height:32px;
+    border: 1px solid;
+    border-radius: .3em;
+}
+.bi-envelope{
+    margin-bottom: 5.2em;
+    margin-right: .4em
+    
+}
+.bi-lock{
+    z-index: 2;
+    position: absolute;
+    right: 29em;
+    top: 17.2em;
+}
+.popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.messages li{
+    list-style: none;
+    margin: 1em;
+    text-align: center;
+}
+.detect_error{
+    z-index: 20;
+    position: absolute;
+    margin-right: 10em;
+}

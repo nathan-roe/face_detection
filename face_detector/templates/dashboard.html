@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'styles/dashboard_style.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome {{this_user.first_name}} {{this_user.last_name}}!</h1>
+        <form action="/logout" method="post">
+            {%csrf_token%}
+            <button type="submit" class='btn btn-outline-warning'>Logout</button>
+        </form>
+    </header>
+    <div class="main">
+    <table>
+        <thead>
+            <th>This is your current profile</th>
+        </thead>
+        <div class="table_text">
+            <tr>
+                <td>First Name: {{this_user.first_name}}</td>
+            </tr>
+            <tr>
+                <td>Last Name: {{this_user.last_name}}</td>
+            </tr>
+            <tr>
+                <td>Your Email: {{this_user.email}}</td>
+            </tr>
+        </div>
+        <tr class='image'>
+            <td><img src='{{img_url}}' alt='' width='100px' height='150px'></td>
+        </tr>
+    </table>
+    </div>
+    
+</body>
+</html>
