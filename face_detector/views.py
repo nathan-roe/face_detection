@@ -9,6 +9,8 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 def root(request):
     return render(request, 'index.html')
+def login(request):
+    return render(request, 'login.html')
 def detect_face(request):
     # KNOWN_FACES_DIR = 'face_detector/static/known_faces'
 

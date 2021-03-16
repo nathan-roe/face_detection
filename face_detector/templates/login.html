@@ -6,49 +6,41 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type='text/javascript'></script>
     {%load static%}
-    <script src="{%static 'js/register.js'%}"></script>
-    <link rel="stylesheet" href="{%static 'styles/style.css'%}">
+    <script src="{%static 'js/login.js'%}"></script>
+    <link rel="stylesheet" href="{%static 'styles/login_style.css'%}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js" integrity="sha512-ueXKWOB9liraz677EVGxz6H8nLk3RJjNv8Bfc0WrO9K9NyxROX3D/6bvZ9RYvAcYFxsVU+I0Jt/AMK0Nk8ya5g==" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    <!-- <header> -->
-        <!-- <h1>Sign Up / Log In</h1> -->
-    <!-- </header> -->
     <div class="main">
         <div class="imgWrapper">
             <img src="{%static 'images/phone.png'%}" alt="Phone">
         </div>
-        <div class="register">
+        <div class="login">
             <h1>Face Detection</h1>
             <span id='desc'><h2>A sample app to allow login face authentication in any project</h2></span>
-            <form action="/process_reg" method="post" enctype="multipart/form-data">
+            <form class='signIn' action="/process_login" method="post">
                 {%csrf_token%}
-                <h2>Create Account</h2>
-                <span id='post_first'>First Name:</span>
-                <input type="text" name='post_first' >
-                
-                <span id='post_last'>Last Name:</span>
-                <input type="text" name='post_last'>
-                
-                <span id='post_email'>Email:</span>
-                <input type="text" name='post_email'>
-                
-                <span id='post_password'>Password:</span>
-                <input type="text" name='post_password'>
-                
-                <span id='post_confirm'>Confirm Password:</span>
-                <input type="text" name='post_confirm'>
+                <h2>Sign in</h2>
+                <span id='post_login_email'>Email:</span>
+                <input type="text" name='post_login_email'>
 
-                <span id='post_image'>Upload Profile Photo:</span>
-                <content>
-                    <input id='fileUpload' type="file" name='post_image'>
-                </content>
+                <span id='post_login_password'>Password:</span>
+                <input id='password' type="text" name='post_login_password'>
+            
+                <button id='submit' type="submit">Login</button>
 
-                <div id="buttonWrapper">
-                    <button type="submit">Register</button>
+                <div class='detect_error'>
+                    <div>{{error}}</div>
                 </div>
             </form>
+            <div class="detect_button">
+                <form action="/detect_face" method="post">
+                    {%csrf_token%}
+                    <button type="submit">Detect</button>
+                </form>
+                <p>By clicking the button, you're allowing this program to scan your face for possible system matches. Images aren't saved unless uploaded. Curious about how this project works? Visit my repository at <a href="https://github.com/nathan-roe/face_detection">https://github.com/nathan-roe/face_detection</a></p>
+            </div>
         </div>
     </div>
     <div class="popup">
