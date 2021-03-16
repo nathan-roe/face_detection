@@ -9,7 +9,7 @@ $(document).ready(() => {
         else{
             $(`#${e.target.getAttribute('name')}`).transition({
                 'font-size': '1vh',
-                'margin-bottom': '-9vh',
+                'margin-bottom': '-10vh',
             }, 500);
         }        
     });

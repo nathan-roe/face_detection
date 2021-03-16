@@ -16,30 +16,35 @@
         <div class="imgWrapper">
             <img src="{%static 'images/phone.png'%}" alt="Phone">
         </div>
-        <div class="login">
-            <h1>Face Detection</h1>
-            <span id='desc'><h2>A sample app to allow login face authentication in any project</h2></span>
-            <form class='signIn' action="/process_login" method="post">
-                {%csrf_token%}
-                <h2>Sign in</h2>
-                <span id='post_login_email'>Email:</span>
-                <input type="text" name='post_login_email'>
-
-                <span id='post_login_password'>Password:</span>
-                <input id='password' type="text" name='post_login_password'>
-            
-                <button id='submit' type="submit">Login</button>
-
-                <div class='detect_error'>
-                    <div>{{error}}</div>
-                </div>
-            </form>
-            <div class="detect_button">
-                <form action="/detect_face" method="post">
+        <div class="content">
+            <div class="login">
+                <h1>Face Detection</h1>
+                <span id='desc'><h2>A sample app to allow login face authentication in any project</h2></span>
+                <form class='signIn' action="/process_login" method="post">
                     {%csrf_token%}
-                    <button type="submit">Detect</button>
+                    <h2>Sign in</h2>
+                    <span id='post_login_email'>Email:</span>
+                    <input type="text" name='post_login_email' placeholder="Email:">
+    
+                    <span id='post_login_password'>Password:</span>
+                    <input id='password' type="text" name='post_login_password' placeholder="Password:">
+                
+                    <button id='submit' type="submit">Login</button>
+    
+                    <div class='detect_error'>
+                        <div>{{error}}</div>
+                    </div>
                 </form>
-                <p>By clicking the button, you're allowing this program to scan your face for possible system matches. Images aren't saved unless uploaded. Curious about how this project works? Visit my repository at <a href="https://github.com/nathan-roe/face_detection">https://github.com/nathan-roe/face_detection</a></p>
+                <div class="detect_button">
+                    <form action="/detect_face" method="post">
+                        {%csrf_token%}
+                        <button type="submit">Detect</button>
+                    </form>
+                    <p>By clicking the button, you're allowing this program to scan your face for possible system matches. Images aren't saved unless uploaded. Curious about how this project works? Visit my repository at <a href="https://github.com/nathan-roe/face_detection" target='_blank'>https://github.com/nathan-roe/face_detection</a></p>
+                </div>
+            </div>
+            <div class="switch">
+                <p>Not a user? <a href="/">Create an account</a></p>
             </div>
         </div>
     </div>

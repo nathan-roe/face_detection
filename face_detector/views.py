@@ -128,6 +128,8 @@ def logout(request):
     request.session.flush()
     return redirect('/')
 def dashboard(request):
+    if 'uuid' not in request.session:
+        return redirect('/')
     this_user = User.objects.get(id=request.session['uuid'])
     img_url = request.session['img_url']
 

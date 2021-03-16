@@ -12,43 +12,45 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <header> -->
-        <!-- <h1>Sign Up / Log In</h1> -->
-    <!-- </header> -->
     <div class="main">
         <div class="imgWrapper">
             <img src="{%static 'images/phone.png'%}" alt="Phone">
         </div>
-        <div class="register">
-            <h1>Face Detection</h1>
-            <span id='desc'><h2>A sample app to allow login face authentication in any project</h2></span>
-            <form action="/process_reg" method="post" enctype="multipart/form-data">
-                {%csrf_token%}
-                <h2>Create Account</h2>
-                <span id='post_first'>First Name:</span>
-                <input type="text" name='post_first' >
-                
-                <span id='post_last'>Last Name:</span>
-                <input type="text" name='post_last'>
-                
-                <span id='post_email'>Email:</span>
-                <input type="text" name='post_email'>
-                
-                <span id='post_password'>Password:</span>
-                <input type="text" name='post_password'>
-                
-                <span id='post_confirm'>Confirm Password:</span>
-                <input type="text" name='post_confirm'>
-
-                <span id='post_image'>Upload Profile Photo:</span>
-                <content>
-                    <input id='fileUpload' type="file" name='post_image'>
-                </content>
-
-                <div id="buttonWrapper">
-                    <button type="submit">Register</button>
-                </div>
-            </form>
+        <div class="content">
+            <div class="register">
+                <h1>Face Detection</h1>
+                <span id='desc'><h2>A sample app to allow login face authentication in any project</h2></span>
+                <form action="/process_reg" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    <h2>Create Account</h2>
+                    <span id='post_first'>First Name:</span>
+                    <input type="text" name='post_first' >
+                    
+                    <span id='post_last'>Last Name:</span>
+                    <input type="text" name='post_last'>
+                    
+                    <span id='post_email'>Email:</span>
+                    <input type="text" name='post_email'>
+                    
+                    <span id='post_password'>Password:</span>
+                    <input type="text" name='post_password'>
+                    
+                    <span id='post_confirm'>Confirm Password:</span>
+                    <input type="text" name='post_confirm'>
+    
+                    <span id='post_image'>Upload Profile Photo:</span>
+                    <content>
+                        <input id='fileUpload' type="file" name='post_image'>
+                    </content>
+    
+                    <div id="buttonWrapper">
+                        <button type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
+            <div class="switch">
+                <p>Already a user? <a href="/login">Log in</a></p>
+            </div>
         </div>
     </div>
     <div class="popup">
